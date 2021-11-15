@@ -3,9 +3,11 @@ import './App.css';
 import HomePage from './pages/homepage/homepage.component.jsx';
 import {Route, Switch} from 'react-router-dom';
 
-const HatsPage = () => {
-   return <h1>HATS PAGE</h1>
-}
+const HatsPage = () => (
+  <div>
+   <h1>HATS PAGE</h1>
+   </div>
+);
 
 function App() {
   return (
