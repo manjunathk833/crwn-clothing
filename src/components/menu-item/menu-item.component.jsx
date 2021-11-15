@@ -1,9 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router';
+
 import './menu-item.styles.scss';
 
-const MenuItem = ({title, imageUrl, size}) => { //title is explicitly used as destructured array item instead of using props.title
+const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => { //title is explicitly used as destructured array item instead of using props.title
     return(
-        <div className={`${size} menu-item` }>
+        <div 
+        className={`${size} menu-item` } 
+        onclick={() => history.push(`${match.url}${linkUrl}`)}>
             <div
             className='background-image' 
             style={{
@@ -19,4 +23,4 @@ const MenuItem = ({title, imageUrl, size}) => { //title is explicitly used as de
     )
 }
 
-export default MenuItem;
+export default withRouter(MenuItem);
